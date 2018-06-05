@@ -11,16 +11,26 @@ and open the template in the editor.
     </head>
     <body>
         <?php
-        echo "Maxwell Machado";
+        echo "Maxwell Machado<br>";
+        $arquivo = fopen("info.txt","r");
+        if (!$arquivo)
+             echo "Erro na abertura do arquivo";
+        $letra = fgetc($arquivo);
+        echo $letra;
+        fclose($arquivo);
         ?>
+        
         <h1>Teste de Uso do Google Maps </h1>
         <iframe
+         align="left"
          width="600"
-         height="450"
+         height="200"
          frameborder="0" style="border:0"
          src="https://www.google.com/maps/embed/v1/place?key=AIzaSyD-yYVAAC26iiGr0hnx2-tnLQRfGX7H0vU
-         &q=-15.793601, -47.934001" allowfullscreen>
+         &q=-15.793601, -47.934001 &zoom=18 &maptype=satellite" >
         </iframe>
+        
+        
     </body>
 </html>
 <!-- AIzaSyD-yYVAAC26iiGr0hnx2-tnLQRfGX7H0vU -->
